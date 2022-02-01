@@ -5,7 +5,7 @@ pcx-content-type: concept
 
 # Origin Cache Control
 
-Set `Cache-Control` headers to tell Cloudflare how to handle content from the origin. 
+Origin Cache Control allows you to use `Cache-Control` headers to tell Cloudflare how to handle content from the origin. This feature is enabled by default for Free, Pro, and Business domains and disabled by default for Enterprise domains.
 
 When a user sends an HTTP request, the user’s request URL is matched against a [list of cacheable file extensions](/about/default-cache-behavior#default-cached-file-extensions). If the request matches an extension on this list, Cloudflare serves the resource from cache if it is present. If the content is stale in Cloudflare’s cache, Cloudflare attempts to revalidate the content with the origin before serving the response to the client.
 
@@ -364,7 +364,7 @@ This configuration indicates the asset is fresh for 600 seconds. The asset can b
 
 ### [Edge Cache TTL](/about/edge-browser-cache-ttl#edge-cache-ttl) 
 
-Edge Cache TTL Page Rules override `s-maxage` and disable revalidation directives if present. When Origin Cache-Control is enabled at Cloudflare, the original Cache-Control header passes downstream from our edge even if Edge Cache TTL overrides are present. Otherwise, when Origin Cache-Control is disabled at Cloudflare (the default), Cloudflare overrides the origin cache control.
+Edge Cache TTL Page Rules override `s-maxage` and disable revalidation directives if present. When Origin Cache-Control is enabled at Cloudflare (the default), the original Cache-Control header passes downstream from our edge even if Edge Cache TTL overrides are present. Otherwise, when Origin Cache-Control is disabled at Cloudflare, Cloudflare overrides the origin cache control.
 
 ### [Browser Cache TTL](/about/edge-browser-cache-ttl#browser-cache-ttl)
 Browser Cache TTL Page Rules override `max-age` settings passed downstream from our edge, typically to your visitor's browsers.
